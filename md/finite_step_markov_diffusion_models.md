@@ -136,7 +136,13 @@ $$
 D_{\rm KL} (q_{0,\cdots,T}|p_{0,\cdots,T}) \equiv  \sum_{t=1}^T D_{t-1}
 $$
 
-where $D_0 = D_{\rm KL}(q_0|p_{0|1})$,  $D_{t-1} = D_{\rm KL}(q_{t-1|t,0}|p_{t-1|t,0})$ for $1<t<T$, and $D_T = D_{\rm KL} (q_{T|0}|p_T).$
+where 
+
+* $D_0 = D_{\rm KL}(q_0|p_{0|1})$,  
+
+* $D_{t-1} = D_{\rm KL}(q_{t-1|t,0}|p_{t-1|t,0})$ for $t=2,\cdots,T$, and 
+
+* $D_T = D_{\rm KL} (q_{T|0}|p_T)$.
 
 The last term $D_T$ is a constant with **fixed** distribution $p_T$. If add back the entropy term $H[q_0]$, the first term becomes the usual likelihood 
 
@@ -230,7 +236,7 @@ $$
 
 where the model parameters are $\mu_t$ and $\sigma_t$. The variance will eventually contribute to learning rate; we will treat $\sigma_t$ as a hyperparameter instead of learning it from stochastic gradient descent. The only learnable parameter is then $\mu_t=\mu_t({\bf x}_t, t)$.
 
-Recall the objective for each time step $1<t<T$
+Recall the objective for each time step $t=2,\cdots,T$
 
 $$
 D_{t-1} = D_{\rm KL}(q_{t-1|t,0}|p_{t-1|t,0}) = \frac{1}{2\sigma^2_t} \Vert \mu_t - \tilde \mu_t \Vert^2 + {\rm const.}
