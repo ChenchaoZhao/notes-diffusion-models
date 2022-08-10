@@ -1,2 +1,3 @@
-# notes-template
-template for markdown notes
+# Research notes on diffusion models
+
+Finite Step Unconditional Markov Diffusion Models
