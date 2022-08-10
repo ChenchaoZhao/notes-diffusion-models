@@ -136,7 +136,7 @@ $$
 D_{\rm KL} (q_{0,\cdots,T}|p_{0,\cdots,T}) \equiv  \sum_{t=1}^T D_{t-1}
 $$
 
-where $D_0 = D_{\rm KL}(q_0|p_{0|1})$,  $D_{t-1} = D_{\rm KL}(q_{t-1|t,0}|p_{t-1|t,0})$ for $1<t<T$, and $D_T = D_{\rm KL} (q_{T|0}|p_T)$.
+where $D_0 = D_{\rm KL}(q_0|p_{0|1})$,  $D_{t-1} = D_{\rm KL}(q_{t-1|t,0}|p_{t-1|t,0})$ for $1<t<T$, and $D_T = D_{\rm KL} (q_{T|0}|p_T).$
 
 The last term $D_T$ is a constant with **fixed** distribution $p_T$. If add back the entropy term $H[q_0]$, the first term becomes the usual likelihood 
 
