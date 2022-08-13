@@ -217,7 +217,7 @@ $$
 and
 
 $$
-\tilde \beta_t = \beta_t \frac{1-\bar\alpha_{t-1}}{1-\alpha_t} .
+\tilde \beta_t = \beta_t \frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_t} .
 $$
 
 Express ${\bf x}_0$ in terms of ${\bf x}_t$ and noise, the mean simplies
