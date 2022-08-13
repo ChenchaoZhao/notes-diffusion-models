@@ -226,6 +226,32 @@ $$
 \tilde \mu_t ({\bf x}_t) = \alpha_t^{-\frac12 } \left( {\bf x}_t - \frac{\beta_t}{\sqrt{1-\bar \alpha_t}} {\bf z} \right).
 $$
 
+Note that if one naively inverts the forward process formula, one would get
+
+$$
+{\bf x}_{t-1} = \alpha^{-\frac12} \left( {\bf x}_t - \sqrt{\beta_t} {\bf z}\right)
+$$
+
+but the posterior mean is
+
+$$
+\tilde \mu_t ({\bf x}_t) 
+= 
+\alpha_t^{-\frac12 } 
+\left( 
+{\bf x}_t 
+- \sqrt{\frac{1 - \alpha_t}{1-\bar \alpha_t}} \sqrt{\beta_t}{\bf z} 
+\right)
+$$
+
+where
+
+$$
+0 < \sqrt{ \frac{1-\alpha_t}{1-\bar \alpha_t} } \le 1 .
+$$
+
+Thus, the posterior backward process is subtracking less noise except for $t=1$ than what one would naively do.
+
 #### Variational Ansatz
 
 Since the target distribution is Gaussian, it is a good idea to choose Gaussian distribution as the variational Ansatz
