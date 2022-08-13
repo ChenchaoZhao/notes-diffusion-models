@@ -235,13 +235,7 @@ $$
 but the posterior mean is
 
 $$
-\tilde \mu_t ({\bf x}_t) 
-= 
-\alpha_t^{-\frac12 } 
-\left( 
-{\bf x}_t 
-- \sqrt{\frac{1 - \alpha_t}{1-\bar \alpha_t}} \sqrt{\beta_t}{\bf z} 
-\right)
+\tilde \mu_t ({\bf x}_t) = \alpha_t^{-\frac12 } \left( {\bf x}_t - \sqrt{\frac{1 - \alpha_t}{1-\bar \alpha_t}} \sqrt{\beta_t}{\bf z} \right)
 $$
 
 where
