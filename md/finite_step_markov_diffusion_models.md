@@ -159,17 +159,17 @@ and the total loss becomes a typical variational inference loss: the sum of data
 For the particular case of Gaussian diffusion models, we assume
 
 * the terminal distribution is normal
-
+  
   $$
   q_{T|0} = q_{T}=p_{T} = \mathcal N({\bf x}_{T};{\bf 0}, {\bf 1}),
   $$
 
 * forward transition process is Gaussian
-
+  
   $$
   q_{t|t-1} = \mathcal N({\bf x}_{t}; \sqrt{1-\beta_{t}}{\bf x}_{t-1}, \beta_{t} {\bf 1})
   $$
-
+  
   where $0<\beta_{t} \le 1$.
 
 It is useful to introduce additional notations:
@@ -229,7 +229,7 @@ $$
 Note that if one naively inverts the forward process formula, one would get
 
 $$
-{\bf x}_{t-1} = \alpha^{-\frac12} \left( {\bf x}_{t} - \sqrt{\beta_{t}} {\bf z}\right)
+{\bf x}_{t-1} = \alpha_{t}^{-\frac12} \left( {\bf x}_{t} - \sqrt{\beta_{t}} {\bf z}\right)
 $$
 
 but the posterior mean is
@@ -244,7 +244,7 @@ $$
 0 < \sqrt{ \frac{1-\alpha_{t}}{1-\bar \alpha_{t}} } \le 1 .
 $$
 
-Thus, the posterior backward process is subtracking less noise except for $t=1$ than what one would naively do.
+Thus, the posterior backward process is removing less noise except for $t=1$ than what one would naively do.
 
 #### Variational Ansatz
 
@@ -308,6 +308,8 @@ $$
 
 Note that we still have the freedom to choose $\sigma_{t}$ that controls the importance of each step. But in the literature, they usually take a *heuristic* approach by ignoring the weight factor keeping only the $\ell_2$ loss.
 
+> **Question** What if one trains the models using different choices of $\sigma_t$?
+
 #### Sampling the backward process
 
 During training, the model learned the backward transition distribution
@@ -323,6 +325,8 @@ $$
 $$
 
 where ${\bf z} \sim \mathcal N({\bf 0}, {\bf 1})$.
+
+> **Question** What happens if one tries to reconstruct ${\bf x}_0$ using the incorrect, naive formula?
 
 #### Training and inference algorithms
 
