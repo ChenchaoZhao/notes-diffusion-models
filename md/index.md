@@ -4,4 +4,4 @@
 
 * [Markov theory](finite_step_markov_diffusion_models.md)
   - [Gaussian](finite_step_markov_gaussian_diffusion_models.md)
-  - Categorical
+  - [Categorical](finite_step_markov_categorical_diffusion_models.md)
