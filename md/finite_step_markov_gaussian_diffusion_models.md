@@ -195,3 +195,9 @@ where ${\bf z} \sim \mathcal N({\bf 0}, {\bf 1})$.
 * Return ${\bf x}_0$
 
 The reconstruction formula is given in previous section "sampling the backward process."
+
+# References
+
+[[1503.03585] Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)
+
+[[2006.11239] Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)
