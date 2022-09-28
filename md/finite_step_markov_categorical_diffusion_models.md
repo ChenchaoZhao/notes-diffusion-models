@@ -29,8 +29,6 @@ $$
 {\rm Cat}({\bf x} | {\bf p}) = \prod_{k=1}^K p_k^{x_k} = {\bf x} \cdot {\bf p}
 $$
 
-
-
 ### Markov property
 
 We will show that 
@@ -119,6 +117,67 @@ Therefore, we have shown that
 
 $$
 q_{t|0} = {\rm Cat}(\bar \alpha_t {\bf x}_0 + (1 - \bar\alpha_t) {\bf 1}/K).
+$$
+
+Note that it is important that the terminal distribution is a uniform distribution, otherwise the Markov property does not hold.
+
+### Posterior is categorical
+
+We have physical reverse process
+
+$$
+q_{t-1|t, 0} \propto q_{t|t-1} q_{t-1 | 0}
+$$
+
+where the RHS is a vector
+
+$$
+(\alpha_t \delta_{x_t x_{t-1}} + (1-\alpha_t)/K)
+(\bar\alpha_{t-1} \delta_{x_{t-1} x_{0}} + (1-\bar\alpha_{t-1})/K)
+$$
+
+with $x_{t-1} = 1, \cdots, K$.
+
+Thus,
+
+$$
+q_{t-1|t,0} = {\rm Cat}({\bf x}_{t-1}; {\bf f}({\bf x}_t, {\bf x}_0))
+$$
+
+where
+
+$$
+\tilde f_k({\bf x}_t, {\bf x}_0) = (\alpha_t \delta_{x_t k} + (1-\alpha_t)/K)
+(\bar\alpha_{t-1} \delta_{x_{0}k} + (1-\bar\alpha_{t-1})/K).
+$$
+
+and
+
+$$
+f_k({\bf x}_t, {\bf x}_0) = \tilde f_k({\bf x}_t, {\bf x}_0) / \sum_{k=1}^K
+ \tilde f_k({\bf x}_t, {\bf x}_0).
+$$
+
+### Variational Ansatz
+
+We choose a category distribution as the variational Ansatz
+
+$$
+p_{t-1|t} = {\rm Cat}({\bf x}_{t-1}; {\bf f}({\bf x}_t, \hat {\bf x}_0))
+$$
+
+where $\hat {\bf x}_0 = {\bf g}({\bf x}_t, t)$ is the neural network model.
+
+The KL-divergence between physical and variational reverse process is
+
+$$
+D_{t-1} = D_{\rm KL}(q_{t-1|t,0}|p_{t-1|t}) = \sum_k q_k \log \frac{q_k}{p_k}
+$$
+
+which is
+
+$$
+D_{t-1} = - \sum_k f_k ({\bf x}_t, {\bf x}_0) \log f_k({\bf x}_t, {\bf g}({\bf x}_t, t)) + {\rm const.}
 $$
 
 
