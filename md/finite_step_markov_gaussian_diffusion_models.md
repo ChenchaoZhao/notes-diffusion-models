@@ -179,9 +179,9 @@ where ${\bf z} \sim \mathcal N({\bf 0}, {\bf 1})$.
 ##### Training
 
 * Sample
-  * ${\bf x}_0 \sim q_0$
-  * $t \sim {\sf Uniform}(1,\cdots,T)$
-  * ${\bf z}_{t} \sim \mathcal N({\bf 0}, {\bf 1})$
+  * grab a sample ${\bf x}_0 \sim q_0$
+  * pick a time $t \sim {\sf Uniform}(1,\cdots,T)$
+  * sample a noise ${\bf z}_{t} \sim \mathcal N({\bf 0}, {\bf 1})$
 * Construct ${\bf x}_{t}$
 * Feed ${\bf x}_{t}, t$ to model
 * Minimize $L_{t-1}$
@@ -195,6 +195,8 @@ where ${\bf z} \sim \mathcal N({\bf 0}, {\bf 1})$.
 * Return ${\bf x}_0$
 
 The reconstruction formula is given in previous section "sampling the backward process."
+
+---
 
 # References
 

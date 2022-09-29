@@ -180,9 +180,27 @@ $$
 D_{t-1} = - \sum_k f_k ({\bf x}_t, {\bf x}_0) \log f_k({\bf x}_t, {\bf g}({\bf x}_t, t)) + {\rm const.}
 $$
 
+#### Training and inference algorithms
 
+##### Training
 
------
+* Sample
+  * grab a sample ${\bf x}_0 \sim q_0$ 
+  * pick a time $t \sim {\sf Uniform}(1,\cdots,T)$
+  * sample an ${\bf x}_t$
+* Feed ${\bf x}_{t}, t$ to model $\bf g$
+* Compute ${\bf f} ({\bf x}_t, {\bf x}_0)$ and ${\bf f} ({\bf x}_t, \hat {\bf x}_0)$
+* Minimize $D_{t-1}$
+
+##### Inference
+
+* Sample $x_{T} \sim {\rm Cat}({\bf 1}/K)$
+* Loop $t = T,\cdots, 1$
+  * Compute $\hat {\bf x}_0 = {\bf g}({\bf x}_t, t))$
+  * Sample ${\bf x}_{t-1} \sim {\rm Cat}({\bf f}({\bf x}_t, \hat {\bf x}_0))$
+* Return ${\bf x}_0$
+
+---
 
 # References
 

@@ -154,6 +154,8 @@ and the total loss becomes a typical variational inference loss: the sum of data
 
 > So far we have not assumed any specific distribution yet. The objective is purely based on the assumption of Markov property.
 
+---
+
 # References
 
 [[1503.03585] Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/abs/1503.03585)
