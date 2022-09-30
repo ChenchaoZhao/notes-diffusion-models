@@ -66,7 +66,7 @@ $$
 \tilde \beta_{t} = \beta_{t} \frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_{t}} .
 $$
 
-Express ${\bf x}_0$ in terms of ${\bf x}_{t}$ and noise, the mean simplies
+Express ${\bf x}_0$ in terms of ${\bf x}_{t}$ and noise, the mean simplifies
 
 $$
 \tilde \mu_{t} ({\bf x}_{t}) = \alpha_{t}^{-\frac12 } \left( {\bf x}_{t} - \frac{\beta_{t}}{\sqrt{1-\bar \alpha_{t}}} {\bf z} \right).
