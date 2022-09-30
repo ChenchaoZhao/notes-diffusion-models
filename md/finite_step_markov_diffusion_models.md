@@ -93,7 +93,7 @@ $$
 q_{t-1|t} \propto q_{t|t-1} q_{t-1};
 $$
 
-however, without the knowledge of the initial state $x_0$, there could be infinity possibilities. Therefore, we fix the initial state, and get probabilies given the fixed $x_0 \sim q_0$
+however, without the knowledge of the initial state $x_0$, there could be infinite possibilities. Therefore, we fix the initial state, and get probabilities given the fixed $x_0 \sim q_0$
 
 $$
 q_{t-1|t, 0} \propto q_{t|t-1, 0} q_{t-1 | 0},
