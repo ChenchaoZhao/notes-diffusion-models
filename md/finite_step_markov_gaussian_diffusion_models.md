@@ -100,7 +100,7 @@ $$
 p_{t-1|t} = \mathcal N ({\bf x}_{t-1}; \mu_{t}, \sigma^2_{t}{\bf 1} )
 $$
 
-where the model parameters are $\mu_{t}$ and $\sigma_{t}$. The variance will eventually contribute to learning rate; we will treat $\sigma_{t}$ as a hyperparameter instead of learning it from stochastic gradient descent. The only learnable parameter is then $\mu_{t}=\mu_{t}({\bf x}_{t}, t)$.
+where the model parameters are $\mu_{t}$ and $\sigma_{t}$. The variance will eventually contribute to learning rate; we will treat $\sigma_{t}$ as a hyperparameter instead of learning it from stochastic gradient descent. One may choose $\sigma^2_t = \beta_t$ or $\sigma^2_t = \tilde \beta_t$. The only learnable parameter is then $\mu_{t}=\mu_{t}({\bf x}_{t}, t)$.
 
 Recall the objective for each time step $t=2,\cdots,T$
 
