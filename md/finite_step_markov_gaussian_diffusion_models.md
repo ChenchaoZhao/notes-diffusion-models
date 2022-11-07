@@ -152,7 +152,7 @@ $$
 L_{t-1} = \frac{\beta_{t}^2}{2\alpha_{t}(1-\bar\alpha_{t})\sigma_{t}^2} \Vert {\bf z}_{t} -{\bf z}({\bf x}_{t},t)\Vert^2.
 $$
 
-Note that we still have the freedom to choose $\sigma_{t}$ that controls the importance of each step. But in the literature, they usually take a *heuristic* approach by ignoring the weight factor keeping only the $\ell_2$ loss.
+Note that we still have the freedom to choose $\sigma_{t}$ that controls the importance of each step. But in the literature, they usually take a *heuristic* approach by ignoring the weight factor keeping only the $\ell_2$ loss. If we are to include the weight factor, and using (1) $\sigma^2_t = \beta_t$ and (2) $\sigma^2_t = \tilde \beta_t$, we get (1) $\frac12 \frac{\beta_t}{\alpha_t (1 - \bar \alpha_t) + 0^+}$ and (2) $\frac12 \frac{\beta_t}{\alpha_t (1 - \bar \alpha_{t-1}) + 0^+}$.
 
 > **Question** What if one trains the models using different choices of $\sigma_t$?
 
