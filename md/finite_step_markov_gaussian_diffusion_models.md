@@ -156,6 +156,23 @@ Note that we still have the freedom to choose $\sigma_{t}$ that controls the imp
 
 > **Question** What if one trains the models using different choices of $\sigma_t$?
 
+We may also allow the model to predict, optionally per element, $\sigma_t ({\bf x}_t, t)$. Therefore,
+
+$$
+L_{t-1} = 
+\frac{\beta_{t}^2}{\alpha_{t}(1-\bar\alpha_{t})} 
+\frac{\Vert {\bf z}_{t} -{\bf z}({\bf x}_{t},t)\Vert^2}{2\sigma_{t}^2({\bf x}_t, t)} 
++ \ell(\sigma_{t}({\bf x}_t, t))
+$$
+
+Note that there are additional terms in [KL-divergence of two normal distributions]([Kullback–Leibler divergence - Wikipedia](https://en.wikipedia.org/wiki/Kullback–Leibler_divergence)), 
+
+$$
+\ell(\sigma_t) = \frac12 \left( \frac{\beta_t}{\sigma_t^2} - \log \frac{\beta_t}{\sigma_t^2}\right).
+$$
+
+
+
 #### Sampling the backward process
 
 During training, the model learned the backward transition distribution
