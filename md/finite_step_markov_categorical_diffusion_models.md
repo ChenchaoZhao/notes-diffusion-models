@@ -158,6 +158,46 @@ f_k({\bf x}_t, {\bf x}_0) = \tilde f_k({\bf x}_t, {\bf x}_0) / \sum_{k=1}^K
  \tilde f_k({\bf x}_t, {\bf x}_0).
 $$
 
+#### Approximate log-posterior
+
+The posterior may be rewritten in one-hot format as
+
+$$
+\vec q_{t-1|t,0} \propto \left ( \alpha_t \vec x_t + \frac{1}{K}(1 - \alpha_t) \vec 1  \right )
+\odot \left ( \bar \alpha_{t-1} \vec x_0 + \frac{1}{K}(1 - \bar \alpha_{t-1}) \vec 1  \right ) \equiv \vec f
+$$
+
+up to a normalization $\vec 1 \cdot \vec f$. If one take the logarithm of $\vec f$,
+
+$$
+\log \vec f = \log \left ( \alpha_t \vec x_t + \frac{1}{K}(1 - \alpha_t) \vec 1  \right )
++ \log \left ( \bar \alpha_{t-1} \vec x_0 + \frac{1}{K}(1 - \bar \alpha_{t-1}) \vec 1  \right )
+$$
+
+where the first term does not need to be differentiable, while the second term
+
+$$
+{\log(\cdots)} \ge 
+\bar \alpha_{t-1} \log \vec x_0 
++ (1 - \bar \alpha_{t-1}) \log \frac{1}{K} 
+$$
+
+Also note that
+
+$$
+\frac{\vec f}{\vec 1\cdot \vec f} 
+= \frac{\vec f_{-}+\delta \vec f}{\vec 1 \cdot (\vec f_{-}+\delta \vec f)} 
+= \frac{\vec f_{-}}{\vec 1 \cdot \vec f_{-}} + \frac{\delta \vec f}{\vec 1 \cdot \vec f_{-}}- \mathcal O (\delta \vec f \odot \delta \vec f)
+$$
+
+Therefore, 
+
+$$
+\log \frac{\vec f}{\vec 1 \cdot \vec f} \ge \log \frac{\vec f_{-}}{\vec 1\cdot \vec f_{-}}
+$$
+
+
+
 ### Variational Ansatz
 
 We choose a category distribution as the variational Ansatz
