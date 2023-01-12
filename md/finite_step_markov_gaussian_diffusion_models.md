@@ -211,8 +211,6 @@ where ${\bf z} \sim \mathcal N({\bf 0}, {\bf 1})$.
 
 The reconstruction formula is given in previous section "sampling the backward process."
 
-
-
 # How it actually works
 
 Extrapolation to original sample,
@@ -226,8 +224,6 @@ and then use the original equation for posterior mean
 $$
 \tilde \mu_{t}({\bf x}_t, \hat {\bf x}_0) = \frac{\sqrt\alpha_{t} (1 - \bar \alpha_{t-1}){\bf x}_{t} + \beta_{t} \sqrt{\bar \alpha_{t-1}}\hat {\bf x}_0}{1-\bar\alpha_{t}}
 $$
-
-
 
 ---
 
