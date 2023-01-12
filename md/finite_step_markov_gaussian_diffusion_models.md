@@ -171,8 +171,6 @@ $$
 \ell(\sigma_t) = \frac12 \left( \frac{\beta_t}{\sigma_t^2} - \log \frac{\beta_t}{\sigma_t^2}\right).
 $$
 
-
-
 #### Sampling the backward process
 
 During training, the model learned the backward transition distribution
@@ -212,6 +210,24 @@ where ${\bf z} \sim \mathcal N({\bf 0}, {\bf 1})$.
 * Return ${\bf x}_0$
 
 The reconstruction formula is given in previous section "sampling the backward process."
+
+
+
+# How it actually works
+
+Extrapolation to original sample,
+
+$$
+\hat {\bf x}_0 = \frac{1}{\sqrt{\bar \alpha_t}}\left({\bf x}_t - \sqrt{1 - \bar \alpha_t} \hat {\bf z}({\bf x}_t, t) \right)
+$$
+
+and then use the original equation for posterior mean
+
+$$
+\tilde \mu_{t}({\bf x}_t, \hat {\bf x}_0) = \frac{\sqrt\alpha_{t} (1 - \bar \alpha_{t-1}){\bf x}_{t} + \beta_{t} \sqrt{\bar \alpha_{t-1}}\hat {\bf x}_0}{1-\bar\alpha_{t}}
+$$
+
+
 
 ---
 

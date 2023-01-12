@@ -196,8 +196,6 @@ $$
 \log \frac{\vec f}{\vec 1 \cdot \vec f} \ge \log \frac{\vec f_{-}}{\vec 1\cdot \vec f_{-}}
 $$
 
-
-
 ### Variational Ansatz
 
 We choose a category distribution as the variational Ansatz
